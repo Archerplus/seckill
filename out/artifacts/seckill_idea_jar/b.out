@@ -1,0 +1,86 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                        
+
+2020-04-21 21:22:16.628  INFO 14652 --- [           main] com.tth.miaosha.MainApplication          : Starting MainApplication on DESKTOP-GJCE2QD with PID 14652 (E:\IDEA\seckill_idea\out\artifacts\seckill_idea_jar\seckill_idea.jar started by Archer in E:\IDEA\seckill_idea\out\artifacts\seckill_idea_jar)
+2020-04-21 21:22:16.632  INFO 14652 --- [           main] com.tth.miaosha.MainApplication          : No active profile set, falling back to default profiles: default
+2020-04-21 21:22:16.892  INFO 14652 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1060b431: startup date [Tue Apr 21 21:22:16 CST 2020]; root of context hierarchy
+2020-04-21 21:22:19.154  INFO 14652 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2020-04-21 21:22:19.443  INFO 14652 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-21 21:22:19.445  INFO 14652 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-04-21 21:22:19.571  INFO 14652 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-21 21:22:19.572  INFO 14652 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2682 ms
+2020-04-21 21:22:20.000  INFO 14652 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-04-21 21:22:20.005  INFO 14652 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-21 21:22:20.006  INFO 14652 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-21 21:22:20.006  INFO 14652 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-21 21:22:20.007  INFO 14652 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-21 21:22:20.007  INFO 14652 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2020-04-21 21:22:20.063  WARN 14652 --- [           main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userArgumentResolver': Unsatisfied dependency expressed through field 'miaoShaUserService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'miaoShaUserService': Unsatisfied dependency expressed through field 'miaoShaUserDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'miaoShaUserDao' defined in URL [jar:file:/E:/IDEA/seckill_idea/out/artifacts/seckill_idea_jar/seckill_idea.jar!/com/tth/miaosha/dao/MiaoShaUserDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+2020-04-21 21:22:20.066  INFO 14652 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-04-21 21:22:20.103 ERROR 14652 --- [           main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userArgumentResolver': Unsatisfied dependency expressed through field 'miaoShaUserService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'miaoShaUserService': Unsatisfied dependency expressed through field 'miaoShaUserDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'miaoShaUserDao' defined in URL [jar:file:/E:/IDEA/seckill_idea/out/artifacts/seckill_idea_jar/seckill_idea.jar!/com/tth/miaosha/dao/MiaoShaUserDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[seckill_idea.jar:na]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[seckill_idea.jar:na]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[seckill_idea.jar:na]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[seckill_idea.jar:na]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [seckill_idea.jar:na]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [seckill_idea.jar:na]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [seckill_idea.jar:na]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [seckill_idea.jar:na]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [seckill_idea.jar:na]
+	at com.tth.miaosha.MainApplication.main(MainApplication.java:15) [seckill_idea.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'miaoShaUserService': Unsatisfied dependency expressed through field 'miaoShaUserDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'miaoShaUserDao' defined in URL [jar:file:/E:/IDEA/seckill_idea/out/artifacts/seckill_idea_jar/seckill_idea.jar!/com/tth/miaosha/dao/MiaoShaUserDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[seckill_idea.jar:na]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'miaoShaUserDao' defined in URL [jar:file:/E:/IDEA/seckill_idea/out/artifacts/seckill_idea_jar/seckill_idea.jar!/com/tth/miaosha/dao/MiaoShaUserDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[seckill_idea.jar:na]
+	... 32 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.util.Assert.notNull(Assert.java:134) ~[seckill_idea.jar:na]
+	at org.mybatis.spring.support.SqlSessionDaoSupport.checkDaoConfig(SqlSessionDaoSupport.java:74) ~[seckill_idea.jar:na]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:73) ~[seckill_idea.jar:na]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[seckill_idea.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[seckill_idea.jar:na]
+	... 42 common frames omitted
+
