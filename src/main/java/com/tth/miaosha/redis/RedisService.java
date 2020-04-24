@@ -15,36 +15,6 @@ public class RedisService {
     @Autowired
     JedisPool jedisPool;
 
-
-//    public <T> T get(String key,Class<T> clazz){
-//        Jedis jedis = null;
-//        try{
-//            jedis = jedisPool.getResource();
-//            String str = jedis.get(key);
-//            System.out.println("key: " + key + ", value: " + str);
-//            T t = stringToBean(str,clazz);
-//            return t;
-//        }finally {
-//            returnToPool(jedis);
-//        }
-//    }
-
-//    public <T> boolean set(String key,T value){
-//        Jedis jedis = null;
-//        try{
-//            jedis = jedisPool.getResource();
-//            String str = beanToString(value);
-//            if(str == null || str.length() <= 0){
-//                return false;
-//            }
-//            jedis.set(key,str);
-//            return true;
-//        }finally {
-//            returnToPool(jedis);
-//        }
-//    }
-
-
     //设置对象
     public <T> boolean set(KeyPrefix prefix,String key,T value){
         Jedis jedis = null;
@@ -64,7 +34,6 @@ public class RedisService {
             }else{
                 System.out.println("过一段时间就过期");
                 System.out.println("set: key: " + realKey + ", value: " + str);
-//                jedis.set(realKey,str);
                 jedis.setex(realKey,seconds,str);  //setex = set + expire
             }
             return true;

@@ -9,14 +9,12 @@ import com.tth.miaosha.result.CodeMsg;
 import com.tth.miaosha.util.MD5Util;
 import com.tth.miaosha.util.UUIDUtil;
 import com.tth.miaosha.vo.LoginVo;
-import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.util.UUID;
 
 @Service
 public class MiaoShaUserService {
@@ -64,7 +62,6 @@ public class MiaoShaUserService {
 
     public boolean login(HttpServletResponse response,LoginVo loginVo) {
         if(loginVo == null){
-//            return CodeMsg.SERVER_ERROR;
             throw new GlobalException(CodeMsg.SERVER_ERROR);
         }
         String mobile = loginVo.getMobile();
@@ -72,7 +69,6 @@ public class MiaoShaUserService {
         //判断手机号是否存在
         MiaoShaUser user = getById(Long.parseLong(mobile));
         if(user == null){
-//            return CodeMsg.MOBILE_NOT_EXIST;
             throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
         }
         //验证密码

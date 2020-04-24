@@ -25,7 +25,6 @@ public class OrderService {
     RedisService redisService;
 
     public MiaoshaOrder getMiaoshaOrderByUserIdGoodsId(Long userId, Long goodsId) {
-//        return orderDao.getMiaoshaOrderByUserIdGoodsId(userId, goodsId);
         return redisService.get(OrderKey.getMiaoshaOrderByUidGid,userId + "_" + goodsId,MiaoshaOrder.class);
     }
 

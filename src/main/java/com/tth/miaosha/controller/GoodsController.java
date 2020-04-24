@@ -72,51 +72,51 @@ public class GoodsController {
     }
 
     //produces代表返回的是一个html格式
-    @RequestMapping(value = "/to_detail2/{goodsId}",produces = "text/html")
-    @ResponseBody
-    public String detail2(HttpServletRequest request,HttpServletResponse response,Model model, MiaoShaUser user, @PathVariable("goodsId")long goodsId){
-        //snowflake  自增id
-        model.addAttribute("user",user);
-
-        //取缓存
-        String html = redisService.get(GoodsKey.getGoodsDetail, "" + goodsId, String.class);
-        if(!StringUtils.isEmpty(html)) {
-            System.out.println("goods_detail: 取缓存");
-            return html;
-        }
-
-        //手动渲染
-        System.out.println("goods_detail: 手动渲染");
-        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
-        model.addAttribute("goods",goods);
-        long startAt = goods.getStartDate().getTime();
-        long endAt = goods.getEndDate().getTime();
-        long now = System.currentTimeMillis();
-        int miaoshaStatus = 0;
-        int remainSeconds = 0;
-        if(now < startAt){//秒杀还没有开始，倒计时
-            miaoshaStatus = 0;
-            remainSeconds = (int)((startAt - now) / 1000);
-        }else if(now > endAt){//秒杀已经结束
-            miaoshaStatus = 2;
-            remainSeconds = -1;
-        }else{//秒杀正在进行中
-            miaoshaStatus = 1;
-            remainSeconds = 0;
-        }
-        model.addAttribute("miaoshaStatus",miaoshaStatus);//秒杀状态
-        model.addAttribute("remainSeconds",remainSeconds);//还有多久开始
-//        return "goods_detail";
-
-        SpringWebContext ctx = new SpringWebContext(request,response,
-                request.getServletContext(),request.getLocale(), model.asMap(), applicationContext );
-        //手动渲染
-        html = thymeleafViewResolver.getTemplateEngine().process("goods_detail", ctx);
-        if(!StringUtils.isEmpty(html)) {
-            redisService.set(GoodsKey.getGoodsDetail, ""+goodsId, html);
-        }
-        return html;
-    }
+//    @RequestMapping(value = "/to_detail2/{goodsId}",produces = "text/html")
+//    @ResponseBody
+//    public String detail2(HttpServletRequest request,HttpServletResponse response,Model model, MiaoShaUser user, @PathVariable("goodsId")long goodsId){
+//        //snowflake  自增id
+//        model.addAttribute("user",user);
+//
+//        //取缓存
+//        String html = redisService.get(GoodsKey.getGoodsDetail, "" + goodsId, String.class);
+//        if(!StringUtils.isEmpty(html)) {
+//            System.out.println("goods_detail: 取缓存");
+//            return html;
+//        }
+//
+//        //手动渲染
+//        System.out.println("goods_detail: 手动渲染");
+//        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
+//        model.addAttribute("goods",goods);
+//        long startAt = goods.getStartDate().getTime();
+//        long endAt = goods.getEndDate().getTime();
+//        long now = System.currentTimeMillis();
+//        int miaoshaStatus = 0;
+//        int remainSeconds = 0;
+//        if(now < startAt){//秒杀还没有开始，倒计时
+//            miaoshaStatus = 0;
+//            remainSeconds = (int)((startAt - now) / 1000);
+//        }else if(now > endAt){//秒杀已经结束
+//            miaoshaStatus = 2;
+//            remainSeconds = -1;
+//        }else{//秒杀正在进行中
+//            miaoshaStatus = 1;
+//            remainSeconds = 0;
+//        }
+//        model.addAttribute("miaoshaStatus",miaoshaStatus);//秒杀状态
+//        model.addAttribute("remainSeconds",remainSeconds);//还有多久开始
+////        return "goods_detail";
+//
+//        SpringWebContext ctx = new SpringWebContext(request,response,
+//                request.getServletContext(),request.getLocale(), model.asMap(), applicationContext );
+//        //手动渲染
+//        html = thymeleafViewResolver.getTemplateEngine().process("goods_detail", ctx);
+//        if(!StringUtils.isEmpty(html)) {
+//            redisService.set(GoodsKey.getGoodsDetail, ""+goodsId, html);
+//        }
+//        return html;
+//    }
 
 
 

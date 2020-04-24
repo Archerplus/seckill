@@ -1,24 +1,14 @@
 package com.tth.miaosha.config;
 
 import com.tth.miaosha.domain.MiaoShaUser;
-import com.tth.miaosha.redis.MiaoShaUserKey;
 import com.tth.miaosha.service.MiaoShaUserService;
-import com.tth.miaosha.service.UserService;
-import org.codehaus.groovy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @Component
 public class UserArgumentResolver implements HandlerMethodArgumentResolver {
