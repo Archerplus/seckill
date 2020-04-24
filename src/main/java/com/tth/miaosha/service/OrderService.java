@@ -1,6 +1,5 @@
 package com.tth.miaosha.service;
 
-import com.tth.miaosha.dao.GoodsDao;
 import com.tth.miaosha.dao.OrderDao;
 import com.tth.miaosha.domain.MiaoShaUser;
 import com.tth.miaosha.domain.MiaoshaOrder;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class OrderService {

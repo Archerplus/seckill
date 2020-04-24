@@ -5,8 +5,6 @@ import org.springframework.util.StringUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import javax.validation.Valid;
-import java.lang.annotation.Annotation;
 //第一个参数是需要进行校验的注解，第二个参数是校验的数据类型
 public class IsMobileValidator implements ConstraintValidator<IsMoble, String> {
 

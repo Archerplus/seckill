@@ -1,7 +1,6 @@
 package com.tth.miaosha.service;
 
 import com.tth.miaosha.dao.GoodsDao;
-import com.tth.miaosha.domain.Goods;
 import com.tth.miaosha.domain.MiaoshaGoods;
 import com.tth.miaosha.vo.GoodsVo;
 import org.springframework.beans.factory.annotation.Autowired;

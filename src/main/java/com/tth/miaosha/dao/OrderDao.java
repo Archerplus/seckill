@@ -2,12 +2,8 @@ package com.tth.miaosha.dao;
 
 import com.tth.miaosha.domain.MiaoshaOrder;
 import com.tth.miaosha.domain.OrderInfo;
-import com.tth.miaosha.vo.GoodsVo;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 @Mapper

@@ -1,7 +1,5 @@
 package com.tth.miaosha.service;
 
-import com.tth.miaosha.dao.GoodsDao;
-import com.tth.miaosha.domain.Goods;
 import com.tth.miaosha.domain.MiaoShaUser;
 import com.tth.miaosha.domain.MiaoshaOrder;
 import com.tth.miaosha.domain.OrderInfo;

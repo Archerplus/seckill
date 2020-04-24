@@ -1,7 +1,6 @@
 package com.tth.miaosha.controller;
 
 import com.tth.miaosha.domain.MiaoShaUser;
-import com.tth.miaosha.domain.User;
 import com.tth.miaosha.redis.GoodsKey;
 import com.tth.miaosha.redis.RedisService;
 import com.tth.miaosha.result.Result;
@@ -9,9 +8,6 @@ import com.tth.miaosha.service.GoodsService;
 import com.tth.miaosha.service.MiaoShaUserService;
 import com.tth.miaosha.vo.GoodsDetailVo;
 import com.tth.miaosha.vo.GoodsVo;
-import com.tth.miaosha.vo.LoginVo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -23,7 +19,6 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 import java.util.List;
 
 @Controller

@@ -1,9 +1,7 @@
 package com.tth.miaosha.controller;
 
 import com.tth.miaosha.domain.User;
-//import com.tth.miaosha.rabbitmq.MQSender;
 import com.tth.miaosha.rabbitmq.MQSender;
-import com.tth.miaosha.redis.KeyPrefix;
 import com.tth.miaosha.redis.RedisService;
 import com.tth.miaosha.redis.UserKey;
 import com.tth.miaosha.result.Result;
